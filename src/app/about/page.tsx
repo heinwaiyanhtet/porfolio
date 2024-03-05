@@ -69,7 +69,7 @@ const About: NextPage = () => {
                             <i className="fa fa-calendar" /> Dec - 2022 to Present
                           </h6>
                           <h4 className="timeline-title">Backend Developer</h4>
-                          <h4>Mahar Mobile Application</h4>
+                          <h4 className="company-name">Mahar Mobile Application</h4>
 
                           {/* <p> <img src="/imgs/icon/building-regular.svg" /> 
                            ABC Content Solutions well known as Mahar Mobile Application
