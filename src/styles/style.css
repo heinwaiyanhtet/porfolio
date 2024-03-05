@@ -537,6 +537,20 @@ select {
   max-width: 50%;
   margin-top: 30px;
 }
+.experience .experience-industry
+{
+  text-align: justify;
+}
+
+.experience .experience-industry ol
+{
+  margin-bottom: 5px;
+}
+
+.experience-industry ol:first-child
+{
+   margin-top: 4px;
+}
 .about .about-content h3.title {
   font-size: 24px;
   margin-bottom: 30px;
@@ -559,6 +573,7 @@ select {
 .about .about-content .timeline .timeline-item {
   position: relative;
   padding-left: 37px;
+  padding-right: 37px;
   padding-bottom: 50px;
 }
 .about .about-content .timeline .timeline-item:last-child {

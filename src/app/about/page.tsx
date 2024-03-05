@@ -16,7 +16,7 @@ const About: NextPage = () => {
               <div className="row">
                 <div className="about-text padd-15">
                   <h2>
-                    I am Hein Wai Yan Htet a <span>software enginner</span>
+                    I am Hein Wai Yan Htet ,  <span>a software enginner</span>
                   </h2>
                   <p>
                       Experienced Developer with three years in web design 
@@ -31,13 +31,16 @@ const About: NextPage = () => {
                 <div className="download-cv">
                   <div className="row">
                       <div className="buttons padd-15">
+
                         <a
-                          href="/assets/docs/resume.pdf"
+                          href="docs/Resume_Hein_Wai_Yan_Htet.pdf"
                           target="_target"
                           className="btn"
+                          download
                         >
                           Download CV
                         </a>
+
                         <a
                           href="#contact"
                           data-section-index={0}
@@ -66,32 +69,32 @@ const About: NextPage = () => {
                             <i className="fa fa-calendar" /> Dec - 2022 to Present
                           </h6>
                           <h4 className="timeline-title">Backend Developer</h4>
+                          <h4>Mahar Mobile Application</h4>
 
                           {/* <p> <img src="/imgs/icon/building-regular.svg" /> 
                            ABC Content Solutions well known as Mahar Mobile Application
                           </p> */}
-
+                            <ul className="experience-industry">
+                              <ol>1.  Integrated AWS services, including Cognito and S3, to enhance user authentication and data storage capabilities.</ol>
+                              <ol>2.  Designed and implemented microservice APIs using .NET, Entity Framework, dapper, gRPC, LINQ, Blazor, OData, refit, store-procedure with both code-first or database-first approach.</ol>
+                              <ol>3.  Utilized Docker for efficient deployment, ensuring scalability and maintainability.</ol>
+                              <ol>4.  Implemented Sentry for robust error handling, minimizing downtime and enhancing user experience.</ol>
+                              <ol>5.  Led the development of a transcoding dashboard using Next.js, .NET, JWT, Prisma authentication, and FFmpeg.</ol>
+                              <ol>6.  Engineered a real-time notification system using AWS SNS, enhancing communication channels within the application.</ol>
+                              <ol>7.  Customized a web player with pure JavaScript and .NET MVC, contributing to an improved multimedia experience.</ol>
+                              <ol>8.  Developed a QR login API for Android TV, providing a convenient and secure login method.</ol>
+                              <ol>9.  Developed and maintained a dynamic React, Redux, TypeScript, Prisma, node.js dashboard.</ol>
+                              <ol>10. Conducted research on payment integration methods, staying abreast of industry trends and technologies.</ol>
+                            </ul>
                           <p className="timeline-text">
-                            From 2018 I am woking on Graphics Design. The
-                            software I use Photoshop, Illustrator for Graphics
-                            design.
+
+
                           </p>
                         </div>
                       
                         {/* Timeline Item end */}
                         {/* Timeline Item */}
-                        <div className="timeline-item">
-                          <div className="circle-dot" />
-                          <h6 className="timeline-date">
-                            <i className="fa fa-calendar" /> 2020 to Present
-                          </h6>
-                          <h4 className="timeline-title">Wordpress</h4>
-                          <p className="timeline-text">
-                            Since 2020 I started to learn Wordpress. I can
-                            install, Customize, &amp; fix bug on wordpress.{" "}
-                          </p>
-                        </div>
-                        {/* Timeline Item end */}
+                       
                       </div>
                     </div>
                   </div>

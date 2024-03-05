@@ -80,9 +80,9 @@ const Sidebar = () => {
           </li>
         </ul>
         <div className="copyright">
-            Created with ❤️ By{" "}
+            Created   By{" "}
             <a href="#" target="_blank" rel="noopener noreferrer">
-              Hein Wai Yan Htet
+            ❤️ Hein Wai Yan Htet
             </a>
         </div>
       </div>
