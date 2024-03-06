@@ -54,64 +54,79 @@ const About: NextPage = () => {
                 </div>
               </div>
               <div className="row">
+
                 <div className="skills padd-15">
                   <div className="row">
-
-                      <div className="skill-item padd-15">
-                        <h5> Javascript </h5>
-                        <div className="progress">
-                          <div className="progress-in" style={{ width: "70%" }} />
-                          <div className="skill-percent">70%</div>
+                        <div className="skill-item padd-15">
+                          <h5> Javascript </h5>
+                          <div className="progress">
+                            <div className="progress-in" style={{ width: "70%" }} />
+                            <div className="skill-percent">70%</div>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="skill-item padd-15">
-                        <h5> .net </h5>
-                        <div className="progress">
-                          <div className="progress-in" style={{ width: "70%" }} />
-                          <div className="skill-percent"> 70% </div>
+                        <div className="skill-item padd-15">
+                          <h5> .net </h5>
+                          <div className="progress">
+                            <div className="progress-in" style={{ width: "70%" }} />
+                            <div className="skill-percent"> 70% </div>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="skill-item padd-15">
-                        <h5> Laravel </h5>
-                        <div className="progress">
-                          <div className="progress-in" style={{ width: "60%" }} />
-                          <div className="skill-percent">60%</div>
+                        <div className="skill-item padd-15">
+                          <h5> Laravel </h5>
+                          <div className="progress">
+                            <div className="progress-in" style={{ width: "60%" }} />
+                            <div className="skill-percent">60%</div>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="skill-item padd-15">
-                        <h5>Software Enginnering </h5>
-                        <div className="progress">
-                          <div className="progress-in" style={{ width: "60%" }} />
-                          <div className="skill-percent">60%</div>
+                        <div className="skill-item padd-15">
+                          <h5>Software Enginnering </h5>
+                          <div className="progress">
+                            <div className="progress-in" style={{ width: "60%" }} />
+                            <div className="skill-percent">60%</div>
+                          </div>
                         </div>
-                      </div>
-
-                      <div className="skill-item padd-15">
-                        <h5>Next.Js </h5>
-                        <div className="progress">
-                          <div className="progress-in" style={{ width: "60%" }} />
-                          <div className="skill-percent">60%</div>
-                        </div>
-                      </div>
-
-                      <div className="skill-item padd-15">
-                        <h5>Nest.Js </h5>
-                        <div className="progress">
-                          <div className="progress-in" style={{ width: "60%" }} />
-                          <div className="skill-percent">60%</div>
-                        </div>
-                      </div>
-
-
-
-
-                  </div>
-
-                  
+                  </div> 
                 </div>
+
+                <div className="skills padd-15">
+                  <div className="row">
+                        <div className="skill-item padd-15">
+                          <h5> Javascript </h5>
+                          <div className="progress">
+                            <div className="progress-in" style={{ width: "70%" }} />
+                            <div className="skill-percent">70%</div>
+                          </div>
+                        </div>
+
+                        <div className="skill-item padd-15">
+                          <h5> .net </h5>
+                          <div className="progress">
+                            <div className="progress-in" style={{ width: "70%" }} />
+                            <div className="skill-percent"> 70% </div>
+                          </div>
+                        </div>
+
+                        <div className="skill-item padd-15">
+                          <h5> Laravel </h5>
+                          <div className="progress">
+                            <div className="progress-in" style={{ width: "60%" }} />
+                            <div className="skill-percent">60%</div>
+                          </div>
+                        </div>
+
+                        <div className="skill-item padd-15">
+                          <h5>Software Enginnering </h5>
+                          <div className="progress">
+                            <div className="progress-in" style={{ width: "60%" }} />
+                            <div className="skill-percent">60%</div>
+                          </div>
+                        </div>
+                  </div> 
+                </div>
+                
               </div>
 
               <div className="row">
