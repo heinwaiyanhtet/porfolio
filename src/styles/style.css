@@ -611,11 +611,17 @@ select {
   text-transform: capitalize;
   color: #302e4d;
 }
+
 .about .about-content .timeline .timeline-text {
   font-size: 16px;
   line-height: 25px;
   color: #504e70;
   margin: 0;
+}
+
+.company-name {
+  display: inline;
+  margin-left: 10px;
 }
 
 /* Service Section 
