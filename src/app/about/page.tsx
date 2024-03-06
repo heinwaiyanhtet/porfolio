@@ -94,7 +94,7 @@ const About: NextPage = () => {
                 <div className="skills padd-15">
                   <div className="row">
                         <div className="skill-item padd-15">
-                          <h5> Javascript </h5>
+                          <h5> Next.js </h5>
                           <div className="progress">
                             <div className="progress-in" style={{ width: "70%" }} />
                             <div className="skill-percent">70%</div>
@@ -102,7 +102,7 @@ const About: NextPage = () => {
                         </div>
 
                         <div className="skill-item padd-15">
-                          <h5> .net </h5>
+                          <h5> Nest.js </h5>
                           <div className="progress">
                             <div className="progress-in" style={{ width: "70%" }} />
                             <div className="skill-percent"> 70% </div>
@@ -110,7 +110,7 @@ const About: NextPage = () => {
                         </div>
 
                         <div className="skill-item padd-15">
-                          <h5> Laravel </h5>
+                          <h5> Node.js </h5>
                           <div className="progress">
                             <div className="progress-in" style={{ width: "60%" }} />
                             <div className="skill-percent">60%</div>
@@ -118,15 +118,15 @@ const About: NextPage = () => {
                         </div>
 
                         <div className="skill-item padd-15">
-                          <h5>Software Enginnering </h5>
+                          <h5> Cloud & containerization </h5>
                           <div className="progress">
-                            <div className="progress-in" style={{ width: "60%" }} />
-                            <div className="skill-percent">60%</div>
+                            <div className="progress-in" style={{ width: "30%" }} />
+                            <div className="skill-percent">30%</div>
                           </div>
                         </div>
                   </div> 
                 </div>
-                
+
               </div>
 
               <div className="row">
