@@ -13,47 +13,47 @@ const About: NextPage = () => {
           <div className="row">
             <div className="about-content padd-15">
 
-              <div className="row">
-                <div className="about-text padd-15">
-                  <h2>
-                    I am Hein Wai Yan Htet ,  <span>a software enginner</span>
-                  </h2>
-                  <p>
-                      Experienced Developer with three years in web design 
-                      and backend development. Well-versed in enterprise-level projects,
-                      I bring a proven track record of delivering scalable solutions on time.
-                      Eager to contribute skills to dynamic projects.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="row">
-                <div className="download-cv">
-                  <div className="row">
-                      <div className="buttons padd-15">
-
-                        <a
-                          href="docs/Resume_Hein_Wai_Yan_Htet.pdf"
-                          target="_target"
-                          className="btn"
-                          download
-                        >
-                          Download CV
-                        </a>
-
-                        <a
-                          href="#contact"
-                          data-section-index={0}
-                          className="btn hire-me"
-                        >
-                        Hire Me
-                      </a>
-                    </div>
+                <div className="row">
+                  <div className="about-text padd-15">
+                    <h2>
+                      I am Hein Wai Yan Htet ,  <span>a software enginner</span>
+                    </h2>
+                    <p>
+                        Experienced Developer with three years in web design 
+                        and backend development. Well-versed in enterprise-level projects,
+                        I bring a proven track record of delivering scalable solutions on time.
+                        Eager to contribute skills to dynamic projects.
+                    </p>
                   </div>
-                  
                 </div>
-              </div>
-              <div className="row">
+                
+                <div className="row">
+                  <div className="download-cv">
+                    <div className="row">
+                        <div className="buttons padd-15">
+
+                          <a
+                            href="docs/Resume_Hein_Wai_Yan_Htet.pdf"
+                            target="_target"
+                            className="btn"
+                            download
+                          >
+                            Download CV
+                          </a>
+
+                          <a
+                            href="#contact"
+                            data-section-index={0}
+                            className="btn hire-me"
+                          >
+                          Hire Me
+                        </a>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div className="row">
 
                 <div className="skills padd-15">
                   <div className="row">
@@ -74,7 +74,7 @@ const About: NextPage = () => {
                         </div>
 
                         <div className="skill-item padd-15">
-                          <h5> Laravel </h5>
+                          <h5> C# </h5>
                           <div className="progress">
                             <div className="progress-in" style={{ width: "60%" }} />
                             <div className="skill-percent">60%</div>
@@ -82,7 +82,7 @@ const About: NextPage = () => {
                         </div>
 
                         <div className="skill-item padd-15">
-                          <h5>Software Enginnering </h5>
+                          <h5> Laravel </h5>
                           <div className="progress">
                             <div className="progress-in" style={{ width: "60%" }} />
                             <div className="skill-percent">60%</div>
@@ -94,7 +94,7 @@ const About: NextPage = () => {
                 <div className="skills padd-15">
                   <div className="row">
                         <div className="skill-item padd-15">
-                          <h5> Next.js </h5>
+                          <h5> Software Enginnering </h5>
                           <div className="progress">
                             <div className="progress-in" style={{ width: "70%" }} />
                             <div className="skill-percent">70%</div>
@@ -102,7 +102,7 @@ const About: NextPage = () => {
                         </div>
 
                         <div className="skill-item padd-15">
-                          <h5> Nest.js </h5>
+                          <h5> Next.js  </h5>
                           <div className="progress">
                             <div className="progress-in" style={{ width: "70%" }} />
                             <div className="skill-percent"> 70% </div>
@@ -110,7 +110,7 @@ const About: NextPage = () => {
                         </div>
 
                         <div className="skill-item padd-15">
-                          <h5> Node.js </h5>
+                          <h5> Node.js & Nest.js </h5>
                           <div className="progress">
                             <div className="progress-in" style={{ width: "60%" }} />
                             <div className="skill-percent">60%</div>
@@ -120,8 +120,8 @@ const About: NextPage = () => {
                         <div className="skill-item padd-15">
                           <h5> Cloud & containerization </h5>
                           <div className="progress">
-                            <div className="progress-in" style={{ width: "30%" }} />
-                            <div className="skill-percent">30%</div>
+                            <div className="progress-in" style={{ width: "25%" }} />
+                            <div className="skill-percent">25%</div>
                           </div>
                         </div>
                   </div> 
@@ -145,14 +145,16 @@ const About: NextPage = () => {
                           <h4 className="timeline-title">Backend Developer</h4>
 
                           {/* <div className="company"> */}
+
                             <img src="/imgs/enterprise.png" alt="" />
-                            <h4 className="company-name">Mahar Mobile Application</h4>
+                            <h4 className="company-name timeline-title">Mahar Mobile Application</h4>
+
                           {/* </div> */}
 
                           {/* <p> <img src="/imgs/icon/building-regular.svg" /> 
                            ABC Content Solutions well known as Mahar Mobile Application
                           </p> */}
-                            <ul className="experience-industry">
+                            <ul className="experience-industry timeline-text">
                               <ol>1.  Integrated AWS services, including Cognito and S3, to enhance user authentication and data storage capabilities.</ol>
                               <ol>2.  Designed and implemented microservice APIs using .NET, Entity Framework, dapper, gRPC, LINQ, Blazor, OData, refit, store-procedure with both code-first or database-first approach.</ol>
                               <ol>3.  Utilized Docker for efficient deployment, ensuring scalability and maintainability.</ol>

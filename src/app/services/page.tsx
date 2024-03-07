@@ -13,7 +13,7 @@ const Service: NextPage = () => {
             </div>
             <div className="row">
 
-            <div className="service-item padd-15">
+            {/* <div className="service-item padd-15">
                 <div className="service-item-inner">
                   <div className="icon"><i className="fa fa-laptop" /></div>
                   <h4>Custom Web Design</h4>
@@ -22,12 +22,22 @@ const Service: NextPage = () => {
                     looks impressive but also delivers a seamless user experience, helping you achieve your online goals.
                   </p>
                 </div>
+            </div> */}
+
+          <div className="service-item padd-15">
+            <div className="service-item-inner">
+              <div className="icon"><i className="fa fa-laptop" /></div>
+              <h4>Web Development</h4>
+              <p>Turn your digital ideas into reality with our web development solutions. We specialize in crafting
+                robust
+                and dynamic websites that are tailored to meet your specific business needs and objectives.</p>
             </div>
+          </div>
 
           <div className="service-item padd-15">
             <div className="service-item-inner">
               <div className="icon"><i className="fa fa-code" /></div>
-              <h4>Web Development</h4>
+              <h4>Backend </h4>
               <p>Turn your digital ideas into reality with our web development solutions. We specialize in crafting
                 robust
                 and dynamic websites that are tailored to meet your specific business needs and objectives.</p>
@@ -35,6 +45,7 @@ const Service: NextPage = () => {
           </div>
      
 
+        
 
      
     </div>
