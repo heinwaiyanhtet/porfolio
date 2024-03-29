@@ -1,0 +1,14 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hein Wai Yan Htet",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^4.26.2"
+  }
+}
