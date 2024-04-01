@@ -13,28 +13,44 @@ fastify.get('/', async function handler (request, reply) {
 
 })
 
-fastify.post('/contact',async function handler (request,reply) {
-
-    const { name, email, message } = request.body;
-
-      try 
+async function insertData(name,email,message){
+     try 
       {
-
+          
           await mongodbClient.connect();
 
-      } catch (e) {
-          console.error(e);
-      } finally {
+          const database = mongodbClient.db("contact"); 
+          const collection = database.collection("contact");
+          await collection.insertOne({ name, email, message });
+          console.log('Contact form data inserted into MongoDB:', { name, email, message });
+          
+      } 
+      catch (e) {
+          console.error('Error inserting contact form data into MongoDB:', error);
+      } 
+      finally {
           await mongodbClient.close();
       }
 
-    console.log('Received contact form submission:', { name, email, message });
+}
+
+fastify.post('/contact',async function handler (request,reply) {
+
+  try {
+    
+    const { name, email, message } = request.body;
+
+    await insertData(name,email,message);       
 
     reply.code(200).send({ success: true });
+
+  } catch (error) {
+    console.log("error occur",error);
+  }
     
 })
 
-// Run the server!
+
 
 try 
 {
@@ -42,6 +58,7 @@ try
   await fastify.listen({ port: 3000 })
 
 } catch (err) {
+  
 fastify.log.error(err)
 process.exit(1)
 }
