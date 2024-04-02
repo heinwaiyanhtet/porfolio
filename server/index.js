@@ -4,6 +4,7 @@ import helmet from '@fastify/helmet';
 import fastifyView from '@fastify/view';
 import Handlebars from 'handlebars';
 
+
 const fastify = Fastify({
   logger: true
 })
@@ -31,7 +32,7 @@ fastify.get('/', async function handler (request, reply) {
 })
 
 
-async function insertData(name,email,message){
+async function insertData(title,email,message){
     try 
     {
         await mongodbClient.connect();
@@ -51,8 +52,8 @@ async function insertData(name,email,message){
 
 fastify.post('/contact',async function handler (request,reply) {
   try {
-    const { name, email, message } = request.body;
-    await insertData(name,email,message);       
+    const { title, email, message } = request.body;
+    await insertData(title,email,message);       
     reply.code(200).send({ success: true });
 
   } catch (error) {
@@ -60,11 +61,39 @@ fastify.post('/contact',async function handler (request,reply) {
   } 
 })
 
-fastify.get('/dashboard',(request,reply) => {
 
-   reply.view('/views/layouts/main', {});
+async function getDataFromMongoDb()
+{
 
-})
+
+    await mongodbClient.connect();
+
+    const database = mongodbClient.db("contact");
+    const collection = database.collection("contact");
+
+    const contactData = await collection.find().toArray();
+
+    return contactData;
+  
+}
+
+fastify.get('/dashboard', async (request, reply) => {
+  try {
+
+    const contactData = await getDataFromMongoDb();
+
+    return reply.view('/views/layouts/main', { contactData }); 
+    
+  } catch (error) {
+    console.error('Error fetching data from MongoDB:', error);
+    return reply.code(500).send('Internal Server Error'); 
+  }
+  finally{
+     await mongodbClient.close();
+  }
+});
+
+
 
 
 try 
@@ -78,3 +107,4 @@ try
   process.exit(1)
 
 }
+
