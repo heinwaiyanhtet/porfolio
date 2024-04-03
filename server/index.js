@@ -32,14 +32,16 @@ fastify.get('/', async function handler (request, reply) {
 })
 
 
-async function insertData(title,email,message){
+async function insertData(name,email,message){
     try 
     {
+
         await mongodbClient.connect();
         const database = mongodbClient.db("contact"); 
         const collection = database.collection("contact");
         await collection.insertOne({ name, email, message });
         console.log('Contact form data inserted into MongoDB:', { name, email, message });
+
     } 
     catch (e) {
         console.error('Error inserting contact form data into MongoDB:', error);
@@ -52,8 +54,8 @@ async function insertData(title,email,message){
 
 fastify.post('/contact',async function handler (request,reply) {
   try {
-    const { title, email, message } = request.body;
-    await insertData(title,email,message);       
+    const { name, email, message } = request.body;
+    await insertData(name,email,message);       
     reply.code(200).send({ success: true });
 
   } catch (error) {
@@ -65,7 +67,6 @@ fastify.post('/contact',async function handler (request,reply) {
 async function getDataFromMongoDb()
 {
 
-
     await mongodbClient.connect();
 
     const database = mongodbClient.db("contact");
@@ -73,16 +74,32 @@ async function getDataFromMongoDb()
 
     const contactData = await collection.find().toArray();
 
-    return contactData;
-  
+    return contactData; 
+
+}
+
+async function getTotalCountFromMongoDb(){
+
+   await mongodbClient.connect();
+
+   const database = mongodbClient.db("contact");
+   const collection = database.collection("contact");
+   const totalCount = await collection.countDocuments();
+
+   return totalCount;
+   
 }
 
 fastify.get('/dashboard', async (request, reply) => {
   try {
 
+    const totalCount = await getTotalCountFromMongoDb();
+
     const contactData = await getDataFromMongoDb();
 
+
     return reply.view('/views/layouts/main', { contactData }); 
+
     
   } catch (error) {
     console.error('Error fetching data from MongoDB:', error);
@@ -92,8 +109,6 @@ fastify.get('/dashboard', async (request, reply) => {
      await mongodbClient.close();
   }
 });
-
-
 
 
 try 
