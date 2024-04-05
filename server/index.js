@@ -62,6 +62,39 @@ fastify.post('/contact',async function handler (request,reply) {
   } 
 })
 
+const PAGE_SIZE = 10; 
+
+
+
+
+async function getPaginationParams(page,totalCount)
+{
+
+    const totalPages = Math.ceil(totalCount / PAGE_SIZE);
+
+    const hasNextPage = page < totalPages;
+    const hasPrevPage = page > 1;
+
+    const prevPage = hasPrevPage ? page - 1 : null;
+    const nextPage = hasNextPage ? page + 1 : null;
+
+    const pages = [];
+
+    for (let i = 0; i <= totalPages; i++) {
+        pages.push({
+            page : i,
+            active : i == page
+        })
+    }
+    
+    return {
+        prevPage,
+        nextPage,
+        pages
+    };
+
+
+}
 
 async function getDataFromMongoDb(page,limit)
 {
@@ -71,7 +104,6 @@ async function getDataFromMongoDb(page,limit)
     const skip = (page - 1) * limit;    
     const contactData = await collection.find().skip(skip).limit(Number(limit)).toArray();
     return contactData; 
-
 }
 
 async function getTotalCountFromMongoDb(){
@@ -89,10 +121,23 @@ fastify.get('/dashboard', async (request, reply) => {
 
   try {
 
-    const {page=1,limit=10} = request.query;
-    const contactData = await getDataFromMongoDb(page,limit);
-    const totalCount = await getTotalCountFromMongoDb();
-    return reply.view('/views/layouts/main', { contactData }); 
+      const {page=1,limit= PAGE_SIZE} = request.query;
+
+      const contactData = await getDataFromMongoDb(page,limit);
+      const totalCount = await getTotalCountFromMongoDb();
+
+      const paginationParams = await getPaginationParams(parseInt(page), totalCount);
+
+    
+      return reply.view(
+            '/views/layouts/main',
+            { 
+              contactData ,
+              ...paginationParams,
+              totalCount ,
+
+            }
+      ); 
     
   } 
   catch (error) {

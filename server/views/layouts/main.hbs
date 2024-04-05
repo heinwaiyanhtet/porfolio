@@ -21,7 +21,32 @@
             </div>
         </div>
         {{/each}}
+
+        <nav aria-label="Page Pagination">
+            <ul class="pagination justify-content-center">
+                {{#if prevPage}}
+                    <li class="page-item ">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                {{/if}}
+
+                {{#each pages}}
+                    <li class="page-item {{#if active}}active{{/if}}">
+                        <a class="page-link" href="?page={{page}}">{{page}}</a>
+                    </li>
+                {{/each}}
+
+                {{#if nextPage}}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{nextPage}}">Next</a>
+                    </li>
+              {{/if}}
+            </ul>
+        </nav>
+
     </div>
+
+
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
