@@ -15,7 +15,7 @@
         {{#each contactData}}
         <div class="card mb-3" style="width: 100%;">
             <div class="card-body">
-                <h5 class="card-title">{{this.name}}</h5>
+                <h5 class="card-title">{{this.title}}</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">{{this.email}}</h6>
                 <p class="card-text">{{this.message}}</p>
             </div>
@@ -24,6 +24,7 @@
 
         <nav aria-label="Page Pagination">
             <ul class="pagination justify-content-center">
+
                 {{#if prevPage}}
                     <li class="page-item ">
                         <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
@@ -40,7 +41,8 @@
                     <li class="page-item">
                         <a class="page-link" href="?page={{nextPage}}">Next</a>
                     </li>
-              {{/if}}
+               {{/if}}
+
             </ul>
         </nav>
 

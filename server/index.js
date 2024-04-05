@@ -32,14 +32,14 @@ fastify.get('/', async function handler (request, reply) {
 })
 
 
-async function insertData(name,email,message){
+async function insertData(title,email,message){
     try 
     {
         await mongodbClient.connect();
         const database = mongodbClient.db("contact"); 
         const collection = database.collection("contact");
-        await collection.insertOne({ name, email, message });
-        console.log('Contact form data inserted into MongoDB:', { name, email, message });
+        await collection.insertOne({ title, email, message });
+        console.log('Contact form data inserted into MongoDB:', { title, email, message });
     } 
     catch (e) {
         console.error('Error inserting contact form data into MongoDB:', error);
@@ -53,8 +53,8 @@ async function insertData(name,email,message){
 fastify.post('/contact',async function handler (request,reply) {
   try {
 
-    const { name, email, message } = request.body;
-    await insertData(name,email,message);       
+    const { title, email, message } = request.body;
+    await insertData(title,email,message);       
     reply.code(200).send({ success: true });
 
   } catch (error) {
@@ -62,9 +62,8 @@ fastify.post('/contact',async function handler (request,reply) {
   } 
 })
 
+
 const PAGE_SIZE = 10; 
-
-
 
 
 async function getPaginationParams(page,totalCount)
@@ -86,7 +85,7 @@ async function getPaginationParams(page,totalCount)
             active : i == page
         })
     }
-    
+    name
     return {
         prevPage,
         nextPage,
