@@ -53,15 +53,14 @@ async function insertData(title,email,message){
 fastify.post('/contact',async function handler (request,reply) {
   try {
 
-    const { title, email, message } = request.body;
-    await insertData(title,email,message);       
+    const { name, title, email, message } = request.body;
+    await insertData(name, title,email,message);       
     reply.code(200).send({ success: true });
 
   } catch (error) {
     console.log("error occur",error);
   } 
 })
-
 
 
 const PAGE_SIZE = 10; 
@@ -86,7 +85,7 @@ async function getPaginationParams(page,totalCount)
             active : i == page
         })
     }
-    name
+    
     return {
         prevPage,
         nextPage,
@@ -95,6 +94,7 @@ async function getPaginationParams(page,totalCount)
 
 
 }
+
 
 async function getDataFromMongoDb(page,limit)
 {
@@ -105,6 +105,7 @@ async function getDataFromMongoDb(page,limit)
     const contactData = await collection.find().skip(skip).limit(Number(limit)).toArray();
     return contactData; 
 }
+
 
 async function getTotalCountFromMongoDb(){
 
@@ -127,7 +128,6 @@ fastify.get('/dashboard', async (request, reply) => {
       const totalCount = await getTotalCountFromMongoDb();
 
       const paginationParams = await getPaginationParams(parseInt(page), totalCount);
-
     
       return reply.view(
             '/views/layouts/main',
@@ -161,4 +161,5 @@ try
   process.exit(1)
 
 }
+
 

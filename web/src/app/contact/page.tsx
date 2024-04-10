@@ -1,6 +1,15 @@
 import type { NextPage } from "next";
+import { useState } from "react";
 
 const Contact: NextPage = () => {
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  
   return (
     <>
       <section className="contact section" id="contact">
@@ -24,6 +33,7 @@ const Contact: NextPage = () => {
             </div>
             {/* contact-info-item Ended */}
             {/* contact-info-item */}
+
             <div className="contact-info-item padd-15">
               <div className="icon">
                 <i className="fa fa-phone" />
@@ -31,6 +41,7 @@ const Contact: NextPage = () => {
               <h4>Call Us On</h4>
               <p> +959 09886787085</p>
             </div>
+
             {/* contact-info-item Ended */}
             {/* contact-info-item */}
             <div className="contact-info-item padd-15">
@@ -46,7 +57,9 @@ const Contact: NextPage = () => {
           </div>
           {/* Contact Form */}
           <div className="row">
+
             <form className="contact-form padd-15">
+
               <div className="row">
                 <div className="form-item col-6 padd-15">
                   <div className="form-group">
@@ -96,6 +109,7 @@ const Contact: NextPage = () => {
                   </button>
                 </div>
               </div>
+
             </form>
           </div>
           {/* Contact Form Ended */}
