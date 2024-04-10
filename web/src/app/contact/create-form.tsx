@@ -1,21 +1,8 @@
-import type { NextPage } from "next";
-import { useState } from "react";
-import { ContactTitle } from "./contact-title";
-import { ContactInformation } from "./contact-information";
-const Contact: NextPage = () => {
-  
-  return (
-    <>
-      <section className="contact section" id="contact">
+"use client"
 
-        <div className="container">
-          
-         <ContactTitle />
-
-         <ContactInformation />
-         
-          {/* Contact Form */}
-          <div className="row">
+export function ContactForm () {
+    return(
+        <div className="row">
 
             <form className="contact-form padd-15">
 
@@ -73,11 +60,5 @@ const Contact: NextPage = () => {
 
             </form>
           </div>
-          {/* Contact Form Ended */}
-        </div>
-      </section>
-    </>
-  );
-};
-
-export default Contact;
+    )
+}
